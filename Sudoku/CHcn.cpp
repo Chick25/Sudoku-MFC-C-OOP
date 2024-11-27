@@ -32,8 +32,9 @@ void CHcn::draw(CPaintDC* dc)
 	//CPen penBorder(PS_SOLID, 3, RGB(255, 0, 0));
 	//CPen* oldPen = dc->SelectObject(&penBorder);
 	//CBrush whiteBrush(RGB(255, 255, 255));
+	CBrush greenBrush(RGB(255, 0, 0));
 	CBrush blueBrush(RGB(121, 205, 205));
-	CBrush redBrush(RGB(121, 121, 121));
+	CBrush redBrush(RGB(192, 192, 192));
 	CBrush* pOldBrush = new CBrush();
 	
 	if (bcolor == 1) {
@@ -46,8 +47,11 @@ void CHcn::draw(CPaintDC* dc)
 	else if (bcolor == 3) {
 		dc->SelectStockObject(NULL_BRUSH);
 	}
+	else if (bcolor == 4) {
+		pOldBrush = dc->SelectObject(&greenBrush);
+	}
 	dc->Rectangle(x1, y1, x2, y2);
-	if (bcolor == 1 || bcolor == 2 || bcolor == 3)
+	if (pOldBrush)
 	{
 		dc->SelectObject(pOldBrush);
 	}

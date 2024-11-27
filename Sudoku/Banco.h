@@ -18,5 +18,6 @@ public:
 	
 	int selectedRow = -1; // Bi?n l?u hàng c?a ô ???c ch?n (kh?i t?o là -1)
 	int selectedCol = -1; // Bi?n l?u c?t c?a ô ???c ch?n (kh?i t?o là -1)
+	//bool isLocked;
 };
 
